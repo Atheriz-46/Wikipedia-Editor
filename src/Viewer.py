@@ -6,6 +6,6 @@ class Viewer(tk.Frame):
         # TODO Markdown parser call and change contents 
         pass 
     
-    def __init__(self, parent,guimanager):
+    def __init__(self,parent,guimanager):
         tk.Frame(self,parent)
         
