@@ -4,6 +4,7 @@ import Editor
 import Viewer
 import Surfer
 import OpeningPage 
+import FileManager
 import Toolbar    
 
 class GUIManager(tk.Tk):
@@ -55,6 +56,9 @@ class GUIManager(tk.Tk):
         
         self.op = OpeningPage(self.currentDirectory)
         
+        # initialize FileManager
+        self.fm = FileManager(self.currentDirectory)
+
         #initialize toolbar 
         tb = Toolbar(self)
         tb.pack(side="top",fill="both",expand=True)
