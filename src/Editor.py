@@ -13,7 +13,7 @@ class Editor(tk.Frame):
         self.txtFrame.insert("1.0",self.manager.fm.fetchFrom())
 
     def __init__(self,parent,guimanager):
-        tk.Frame(self,parent)
+        tk.Frame.__init__(self,parent)
         self.manager = guimanager
         self.primeFrame = tk.Frame(self)
         self.txtFrame = tk.Text(master=self.primeFrame)

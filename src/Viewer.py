@@ -7,5 +7,5 @@ class Viewer(tk.Frame):
         pass 
     
     def __init__(self,parent,guimanager):
-        tk.Frame(self,parent)
+        tk.Frame.__init__(self,parent)
         

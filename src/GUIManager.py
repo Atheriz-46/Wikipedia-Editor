@@ -43,6 +43,10 @@ class GUIManager(tk.Tk):
         self.switchToViewer("HomePage")
         self.frames[Viewer].tkraise()
 
+    def handleSubmit(self,ed,wd):
+        self.currentDirectory = ed.get()
+        wd.destroy()
+        
     def __init__(self,*args,**kwargs):
         tk.Tk.__init__(self,*args,**kwargs)
         
@@ -51,9 +55,15 @@ class GUIManager(tk.Tk):
         
         self.sf  = Surfer()
 
-        #TODO current Directory diolougue
-        self.currentDirectory = "" 
-        
+        windowForDirectory = tk.Tk()
+        textAskingDirectory = tk.Label(master = windowForDirectory,text="Directory of your library")
+        textAskingDirectory.pack(side="left",fill="both",expand=True)
+        entryForDirectory = tk.Entry(master = windowForDirectory)
+        entryForDirectory.pack(side="right",fill="both",expand=True)
+        buttonForDirectory = tk.Button(text="Submit",command=lambda:self.handleSubmit(entryForDirectory,windowForDirectory))
+        buttonForDirectory.pack(side="bottom")
+        windowForDirectory.mainloop()
+
         self.op = OpeningPage(self.currentDirectory)
         
         # initialize FileManager
