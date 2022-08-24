@@ -13,9 +13,10 @@
 * Bold and italics
     * needs to have no space between star and the following text
     * can be inside headings
-    * can be inside lists
+    * can be inside lists (not the opposite)
     - b+i is *** so can be treated as a category of its own
     - can be applied to the whole link * []() * or inside the link text body.(Not to be parsed inside the link destination) (and as a combination of both as well)
+
 
 * Headings 
     -  b,i:
@@ -43,9 +44,32 @@ So we will define every node to have:
   
 ### Types
 we define the following types:
+- document
 -  plain
 - heading - h1-h6
 - link
 - bold
 - italics
 - bold+italics 
+
+### Notes
+- text
+- bi
+  - texts
+- Links
+  - bi
+- Headings
+  - Links
+  - bi
+- list
+  - list
+  - heading 
+  - Link
+  - bi
+    - bi
+      - bi  
+        - bi
+
+### Types#2
+We will store the following in metadata:
+    bold,italics, bi, Headings(size), link_to,
