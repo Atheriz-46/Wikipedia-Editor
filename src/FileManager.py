@@ -1,15 +1,29 @@
-class FileManger:
-    
-    def fetchFrom(self,articleName):
-        # TODO return contents of that file 
-        pass 
-    
-    def saveTo(self,articleName):
-        # TODO saves contents to that file 
-        pass 
-    
-    def setDirectory(self,directory):
-        self.currentDirectory = directory
-    
-    def __init__(self,directoryName):
-        self.setDirectory(directoryName)
+# saveTo
+# fetchFrom
+# setDirectory
+# fetchDirectory
+
+import os
+
+class FileManager():
+	
+	def setDirectory(self, directory): 
+		self.dir = directory
+
+	def fetchDirectory(self):
+		return self.dir
+
+	def fetchFrom(self, filename):
+		self.file = open(os.path.join(self.dir, filename) , 'r')
+		self.content = self.file.read()
+
+		self.file.close()
+
+		return self.content
+
+	def saveTo(self, filename, content):
+		self.file = open(os.path.join(self.dir, filename), 'w')
+		self.file.write(content)
+		
+		self.file.close()
+
