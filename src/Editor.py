@@ -4,7 +4,7 @@ from Viewer import Viewer
 class Editor(tk.Frame):
     def render(self):
         fileContent = self.txtFrame.get("1.0",tk.END)
-        self.manager.saveTo(self.manager.sf.currentTop(),fileContent)
+        self.manager.fm.saveTo(self.manager.sf.currentTop(),fileContent)
         self.vw.changeViewerArticle(self.manager.sf.currentTop())
 
     def changeEditorArticle(self,articleName):

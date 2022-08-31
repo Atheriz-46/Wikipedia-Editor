@@ -67,8 +67,7 @@ class GUIManager(tk.Tk):
         topFrame.pack(side="bottom",fill="both",expand=True)
 
         #initialize toolbar
-        self.tb = Toolbar(self,self)
-        self.tb.pack(side="top",fill="both",pady = 10,expand=True)
+        
 
         #initialize Viewer and Editor
         self.frameViewer = Viewer(topFrame, self)
@@ -77,5 +76,7 @@ class GUIManager(tk.Tk):
         self.columnconfigure(1, weight=1)
         self.frameEditor.grid(row=0, column=0, sticky="nsew")
         self.frameViewer.grid(row=0, column=0, sticky="nsew")
+        self.tb = Toolbar(self,self)
+        self.tb.pack(side="top",fill="both",pady = 10,expand=True)
         self.switchToHomePage()
         self.switchToEditor()
