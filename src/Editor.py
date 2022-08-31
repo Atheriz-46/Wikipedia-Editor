@@ -10,9 +10,9 @@ class Editor(tk.Frame):
     def changeEditorArticle(self,articleName):
         self.vw.changeViewerArticle(articleName)
         self.txtFrame.delete("1.0", tk.END)
-        self.txtFrame.insert("1.0",self.manager.fm.fetchFrom())
+        self.txtFrame.insert("1.0",self.manager.fm.fetchFrom(articleName))
 
-    def __init__(self,parent,guimanager):
+    def __init__(self,parent,guimanager):   
         tk.Frame.__init__(self,parent)
         self.manager = guimanager
         self.primeFrame = tk.Frame(self)
@@ -20,5 +20,6 @@ class Editor(tk.Frame):
         self.vw       = Viewer(self.primeFrame,guimanager)
         self.txtFrame.pack(side="left",fill="both",expand=True)
         self.vw.pack(side="right",fill="both",expand=True)
+        self.primeFrame.pack(side="bottom",fill="both",expand=True)
 
         

@@ -1,6 +1,5 @@
 from glob import glob
 from os.path import join
-from FileManager import FileManger
 
 class OpeningPage:
     
@@ -11,4 +10,4 @@ class OpeningPage:
         file_list = glob(join(self.fm.currentDirectory,'*.md'))
         content = '# Opening Page \n'
         content = content + '\n'.join(f"- [{name}]({name})" for name in file_list)
-        self.fm.saveTo("Homepage.md",content)
+        self.fm.saveTo("HomePage.md",content)

@@ -1,11 +1,10 @@
-from errno import errorcode
 import tkinter as tk
-import Editor 
-import Viewer
-import Surfer
-import OpeningPage 
-import FileManager
-import Toolbar    
+from Editor import Editor 
+from Viewer import Viewer
+from Surfer import Surfer 
+from OpeningPage import OpeningPage 
+from FileManager import FileManager
+from Toolbar import Toolbar    
 
 class GUIManager(tk.Tk):
     # Different Modes GUIManager Works in 
@@ -13,15 +12,18 @@ class GUIManager(tk.Tk):
     # 1 = currently Viewing Wiki 
     # 2 = currently Editing Wiki 
     
+    # for backbutton in toolbar
     def back(self):
         self.switchToViewer("back")
 
+    # for switching to editormode
     def switchToEditor(self):
         
         self.tb.changeMode(2)
-        self.frameViewer.changeEditorArticle(self.sf.currentTop())
-        self.frames[Editor].tkraise()
+        self.frameEditor.changeEditorArticle(self.sf.currentTop())
+        self.frameEditor.tkraise()
     
+    # for switching to an article in viewermode
     def switchToViewer(self,articleName=None):
 
         if articleName == None:
@@ -35,50 +37,43 @@ class GUIManager(tk.Tk):
         self.frameViewer.changeViewerArticle(articleName)
         self.frameViewer.tkraise()
 
+    # for switching to an article in viewermod
     def switchToHomePage(self):
         
-        self.sf.push("HomePage")
+        self.sf.push("HomePage.md")
         self.tb.changeMode(0)
         self.op.generate()
-        self.switchToViewer("HomePage")
-        self.frames[Viewer].tkraise()
+        self.switchToViewer("HomePage.md")
+        self.frameViewer.tkraise()
 
-    def handleSubmit(self,ed,wd):
-        self.currentDirectory = ed.get()
-        wd.destroy()
-        
     def __init__(self,*args,**kwargs):
-        tk.Tk.__init__(self,*args,**kwargs)
+        tk.Tk.__init__(self)
         
         # initialize in Homemode 
         self.currentMode = 0
-        
+        self.title("WoodooPedia")
         self.sf  = Surfer()
 
-        windowForDirectory = tk.Tk()
-        textAskingDirectory = tk.Label(master = windowForDirectory,text="Directory of your library")
-        textAskingDirectory.pack(side="left",fill="both",expand=True)
-        entryForDirectory = tk.Entry(master = windowForDirectory)
-        entryForDirectory.pack(side="right",fill="both",expand=True)
-        buttonForDirectory = tk.Button(text="Submit",command=lambda:self.handleSubmit(entryForDirectory,windowForDirectory))
-        buttonForDirectory.pack(side="bottom")
-        windowForDirectory.mainloop()
-
-        self.op = OpeningPage(self.currentDirectory)
+        # set directory
+        for arg in args:
+            self.currentDirectory = arg
         
         # initialize FileManager
         self.fm = FileManager(self.currentDirectory)
+        self.op = OpeningPage(self.fm)
 
-        #initialize toolbar 
-        tb = Toolbar(self)
-        tb.pack(side="top",fill="both",expand=True)
-
-        #initialize Viewer and Editor
+        #initialize topframe
         topFrame = tk.Frame(self)
-        self.frameViewer = Viewer(topFrame, self)
-        self.frameEditor = Editor(topFrame, self)
-        self.switchToHomePage()
         topFrame.pack(side="bottom",fill="both",expand=True)
 
-mainApplication = GUIManager()
-mainApplication.mainloop()
+        #initialize toolbar
+        self.tb = Toolbar(self,self)
+        self.tb.pack(side="top",fill="both",pady = 10,expand=True)
+
+        #initialize Viewer and Editor
+        self.frameViewer = Viewer(topFrame, self)
+        self.frameEditor = Editor(topFrame, self)
+        self.frameEditor.grid(row=0, column=0, sticky="nsew")
+        self.frameViewer.grid(row=0, column=0, sticky="nsew")
+        self.switchToHomePage()
+        self.switchToEditor()

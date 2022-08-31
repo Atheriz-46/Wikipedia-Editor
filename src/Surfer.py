@@ -3,7 +3,7 @@ class Surfer:
 
     def currentTop(self):
         if len(self.stack) == 0:
-            return "HomePage"
+            return "HomePage.md"
         else:
             return self.stack[-1]
     
