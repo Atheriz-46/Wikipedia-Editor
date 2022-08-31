@@ -7,6 +7,9 @@ import os
 
 class FileManager():
 	
+	def __init__(self,directory): 
+		self.dir = directory
+		self.currentDirectory = directory	
 	def setDirectory(self, directory): 
 		self.dir = directory
 

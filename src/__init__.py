@@ -1,9 +1,11 @@
 from AskDirectory import AskDirectory 
 from GUIManager   import GUIManager
 
-directory = ""
+class Bstring:
+    directory = ""
+
+directory = Bstring()
 ad = AskDirectory(directory)
 ad.mainloop()
-print(directory)
-mainApplication = GUIManager(directory)
+mainApplication = GUIManager(directory.directory)
 mainApplication.mainloop()

@@ -73,6 +73,8 @@ class GUIManager(tk.Tk):
         #initialize Viewer and Editor
         self.frameViewer = Viewer(topFrame, self)
         self.frameEditor = Editor(topFrame, self)
+        self.rowconfigure(1, weight=1)
+        self.columnconfigure(1, weight=1)
         self.frameEditor.grid(row=0, column=0, sticky="nsew")
         self.frameViewer.grid(row=0, column=0, sticky="nsew")
         self.switchToHomePage()

@@ -96,7 +96,7 @@ class Toolbar(tk.Frame):
 		self.btn_back = tk.Button(master = self, text = " < ")
 		self.btn_back.grid(row = 0, column = 0, sticky = "e", padx = 10, pady = 10)
 
-		self.btn_home = tk.Button(master = self, text = "Home", command = self.manager.switchToHomePage())
+		self.btn_home = tk.Button(master = self, text = "Home", command = self.manager.switchToHomePage)
 		self.btn_home.grid(row = 0, column = 1, sticky = 'news')
 
 		self.frm_home = tk.Frame(master = self)
@@ -105,10 +105,10 @@ class Toolbar(tk.Frame):
 
 		self.btn_render = tk.Button(master = self.frm_edit, text = "Render")
 		self.btn_render.pack(side = tk.LEFT) 
-		self.btn_save = tk.Button(master = self.frm_edit, text = "Save", command = self.manager.switchToViewer())
+		self.btn_save = tk.Button(master = self.frm_edit, text = "Save", command = self.manager.switchToViewer)
 		self.btn_save.pack(side = tk.LEFT)
 
-		self.btn_edit = tk.Button(master = self.frm_view, text = "Edit", command = self.manager.switchToEditor())
+		self.btn_edit = tk.Button(master = self.frm_view, text = "Edit", command = self.manager.switchToEditor)
 		self.btn_edit.pack(side = tk.LEFT)
 
 		self.frm_home.grid(row = 0, column = 2, sticky = "news")

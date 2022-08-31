@@ -16,7 +16,7 @@ class Editor(tk.Frame):
         tk.Frame.__init__(self,parent)
         self.manager = guimanager
         self.primeFrame = tk.Frame(self)
-        self.txtFrame = tk.Text(master=self.primeFrame)
+        self.txtFrame = tk.Text(master=self.primeFrame,wrap="word")
         self.vw       = Viewer(self.primeFrame,guimanager)
         self.txtFrame.pack(side="left",fill="both",expand=True)
         self.vw.pack(side="right",fill="both",expand=True)

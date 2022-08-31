@@ -1,7 +1,7 @@
 import tkinter as tk
 class AskDirectory(tk.Tk): 
     def handleSubmit(self):
-        self.str = self.entryForDirectory.get()
+        self.str.directory = self.entryForDirectory.get()
         self.destroy()
 
     def __init__(self,txt):
