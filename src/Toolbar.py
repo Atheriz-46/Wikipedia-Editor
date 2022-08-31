@@ -21,7 +21,7 @@ class Toolbar(tk.Frame):
 		self.manager = guimanager
 
 		self.btn_back = ttk.Button(master = self, text = " < ", command = self.manager.back)
-		self.btn_back.grid(row = 0, column = 0, sticky = "e", padx = 10, pady = 10)
+		self.btn_back.grid(row = 0, column = 0, sticky = "news")
 
 		self.btn_home = ttk.Button(master = self, text = "Home", command = self.manager.switchToHomePage)
 		self.btn_home.grid(row = 0, column = 1, sticky = 'news')
