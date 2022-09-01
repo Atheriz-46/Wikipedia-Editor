@@ -10,20 +10,19 @@ from typing import List
 import re
 from tkinter import Frame,font
 import tkinter as tk
-from uuid import uuid4
 from constants import heading_size
 class IDS:
     
     val: str
     
-    def __init__(self, val:str, type_: str = 'leaf',children = [],**kwargs):
+    def __init__(self, val:str,viewer, type_: str = 'leaf',children = [],**kwargs):
         #TODO: add a way to inherit properties like bi and heading_size from the parent node
         self.val = val
         self.child : List[IDS] = []
         if children: self.child+=children
         self.type_ = type_ #['root','list','non-list']
         self.params = kwargs
-        
+        self.viewer = viewer
 
     def __str__(self):
         return f"type:{self.type_}, val:{self.val}, params:{str(self.params)}" + '\n('+''.join(str(child) for child in self.child)+')'
@@ -56,35 +55,33 @@ class IDS:
             text.tag_configure(tag, **tag_config)
    
     def click(self,link):
-        #webrowser link
         print(f"goto {link}")
-        pass
-        #local link
+        self.viewer.link(link)
         
 
 class MarkdownParser:
-    def __init__(self):
+    def __init__(self,viewer):
+        self.viewer = viewer
         self.result = []
         self.prev_level = -1 
     def parse(self,md):
+        self.__init__(self.viewer)
         for line in md.split('\n'):
             self.isList(line+'\n')
-        self.root = IDS('',children=self.result,type_='root')
+        self.root = IDS('',viewer=self.viewer,children=self.result,type_='root')
     
-    def getFrame(self,parent):
-        frame = tk.Frame(parent, borderwidth=1, relief="sunken")
-        text = tk.Text(master=frame,wrap="word", font=("Liberation Mono", 12), background="white", borderwidth=0, highlightthickness=0)
-        text.pack(in_=frame, side="left", fill="both")
-        text = self.root.getFrame(text)
-        text.config(state='disabled')
-        return frame
+    def getFrame(self,text):
+        # frame = tk.Frame(parent, borderwidth=1, relief="sunken")
+        # text = tk.Text(master=frame,wrap="word", font=("Liberation Mono", 12), background="white", borderwidth=0, highlightthickness=0)
+        # text.pack(in_=frame, side="left", fill="both")
+        return self.root.getFrame(text)
         
          
     def getRe(self,type_,*args,**kwargs):
         if type_=='list':
             return re.compile(rf"(\t{{0,{kwargs['level']}}})[\-\*] ([\S\s]*)")
         if type_=='heading':
-            return re.compile(rf"(#{{1,6}}) ([\S \t]*)")
+            return re.compile(rf"(#{{1,6}}) ([\S\s]*)")
         if type_ =='link':
             return re.compile(rf"([\S\s]*)\[([^\n\f\v\r\]]+)\]\(([^\n\f\v\r\t \)]+)\)([\S\s]*)")
         if type_ =='bi':
@@ -96,7 +93,7 @@ class MarkdownParser:
         match = regex.match(md)
         if match:
             val, self.prev_level = match.group(2), len(match.group(1))
-            self.result.append(IDS(val = '   '*self.prev_level + '\u2022 ',type_ = 'list'))
+            self.result.append(IDS(val = '   '*self.prev_level + '\u2022 ',viewer=self.viewer,type_ = 'list'))
             self.isHeading(val,params)
         else:
             self.prev_level = -1
@@ -144,7 +141,7 @@ class MarkdownParser:
             self.isText(md,params)
         
     def isText(self,md,params):
-        self.result.append(IDS(md,**params))
+        self.result.append(IDS(md,viewer=self.viewer,**params))
 
     #TODO: complete line by line parsing
     

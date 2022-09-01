@@ -25,7 +25,7 @@ class FileManager():
 		return self.content
 
 	def saveTo(self, filename, content):
-		self.file = open(os.path.join(self.dir, filename), 'w')
+		self.file = open(os.path.join(self.dir, filename), 'w+')
 		self.file.write(content)
 		
 		self.file.close()
