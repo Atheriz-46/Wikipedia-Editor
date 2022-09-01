@@ -15,7 +15,7 @@ class FileManager():
 		self.dir = directory
 
 	def makeFile(self,articleName):
-		self.file = open(os.path.join(self.dir,articleName), 'w+')
+		self.file = open(os.path.join(self.dir,articleName), 'a+')
 		self.file.close()
 	
 	def fetchDirectory(self):
