@@ -1,3 +1,10 @@
+"""
+Module name : Toolbar
+
+Used to create a Toolbar Frame object which contains widgets to navigate through the application,create new pages, edit and view existing pages
+
+"""
+
 import tkinter as tk
 from tkinter import ttk
 
@@ -5,6 +12,15 @@ from tkinter import ttk
 class Toolbar(tk.Frame):
 	
 	def changeMode(self, newMode):
+
+		"""
+		Used to change the widgets displayed on Toolbar depending on mode. Called by GUIManager
+
+		Args:
+			newMode (int) : Specifies the mode to be switched to - {0 : Home mode, 1 : View mode, 2 : Edit mode}
+
+		"""
+
 		if (newMode == 0):
 			self.frm_home.tkraise()
 
@@ -16,6 +32,15 @@ class Toolbar(tk.Frame):
 
 
 	def __init__(self, parent, guimanager):
+
+		"""
+		Initialises all frames and widgets for Toolbar
+
+		Args:
+			parent (tk.Tk) : The parent window where the toolbar frame is to be displayed
+			guimanager (GUIManager) : Used to link the Toolbar to GUIManager object
+
+		"""
 
 		tk.Frame.__init__(self, master = parent, relief = tk.SUNKEN, borderwidth = 1)
 
@@ -58,6 +83,14 @@ class Toolbar(tk.Frame):
 		self.frm_edit.grid(row = 0, column = 2, sticky = "news")
 
 	def newPage(self, frm):
+
+		"""
+		Used to create a new Page. Called when "New Page" button is clicked. Fetches new page name from entry widget and call newPage() from GUIManager
+
+		Args:
+			frm (tk.Frame) : Specifies the mode in which the "New Page" button has been clicked {frm_home : Home mode, frm_view : View mode}
+
+		"""
 
 		if (frm == self.frm_home):
 			self.manager.newPage(self.ent_home.get())
