@@ -1,5 +1,5 @@
 import tkinter as tk
-from ids import MarkdownParser
+import MarkdownParser
 
 class Viewer(tk.Frame):
     def changeViewerArticle(self,articleName):
