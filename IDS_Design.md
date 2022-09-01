@@ -1,6 +1,6 @@
 # Problems:
 - Nested lists ?
-# Heading **Bold** *italics*
+# Heading __Bold__ _italics*
 
 - heading
   - text
@@ -18,9 +18,9 @@
 
 # Dynamics of different categories
 * Bold and italics
-    * needs to have no space between star and the following text
-    * can be inside headings
-    * can be inside lists (not the opposite)
+	* needs to have no space between star and the following text
+	* can be inside headings
+	* can be inside lists (not the opposite)
     - b+i is *** so can be treated as a category of its own
     - can be applied to the whole link * []() * or inside the link text body.(Not to be parsed inside the link destination) (and as a combination of both as well)
 
@@ -78,3 +78,4 @@ we define the following types:
 ### Types#2
 We will store the following in metadata:
     bold,italics, bi, Headings(size), link_to,
+
