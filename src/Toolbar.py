@@ -67,6 +67,10 @@ class Toolbar(tk.Frame):
         )
         self.btn_edit.pack(side=tk.LEFT)
 
+        self.btn_del = ttk.Button(
+            master=self.frm_view, text="Delete", command=self.manager.deletePage
+        )
+        self.btn_del.pack(side=tk.LEFT)
         self.ent_home = tk.Entry(master=self.frm_home)
         self.btn_new_home = ttk.Button(
             master=self.frm_home,
