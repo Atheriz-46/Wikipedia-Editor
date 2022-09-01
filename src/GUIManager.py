@@ -80,4 +80,3 @@ class GUIManager(tk.Tk):
         self.tb = Toolbar(self,self)
         self.tb.pack(side="top",fill="both",pady = 10)
         self.switchToHomePage()
-        self.switchToEditor()
