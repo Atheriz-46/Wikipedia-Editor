@@ -37,8 +37,10 @@ class GUIManager(tk.Tk):
             articleName = self.sf.back()
         else :
             self.sf.push(articleName)
-        
-        self.tb.changeMode(1)
+        if articleName == "HomePage.md":
+            self.tb.changeMode(0)
+        else:
+            self.tb.changeMode(1)
         self.frameViewer.changeViewerArticle(articleName)
         self.frameViewer.tkraise()
 
