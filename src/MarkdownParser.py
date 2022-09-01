@@ -2,6 +2,8 @@ import re
 from IDS import IDS
 
 class MarkdownParser:
+    """Parser for md to IDS.
+    """
     def __init__(self,viewer):
         """Initializes the MarkdownParser
 
@@ -23,13 +25,26 @@ class MarkdownParser:
         self.root = IDS('',viewer=self.viewer,children=self.result,type_='root')
     
     def getFrame(self,text):
-        # frame = tk.Frame(parent, borderwidth=1, relief="sunken")
-        # text = tk.Text(master=frame,wrap="word", font=("Liberation Mono", 12), background="white", borderwidth=0, highlightthickness=0)
-        # text.pack(in_=frame, side="left", fill="both")
+        """Returns the rendered tk.Text object corresponding to the md parsed.
+
+        Args:
+            text (tk.Text): tk.Text object to dump all the formatted text into
+
+        Returns:
+            tk.Text: Rendered tk.Text object, ready to be packed
+        """
         return self.root.getFrame(text)
         
          
     def getRe(self,type_,*args,**kwargs):
+        """Returns the corresponding regex object
+
+        Args:
+            type_ (str): denotes the regex type wanted
+
+        Returns:
+            re.pattern : returns the regex pattern object
+        """
         if type_=='list':
             return re.compile(rf"(\t{{0,{kwargs['level']}}})[\-\*] ([\S\s]*)")
         if type_=='heading':
@@ -41,6 +56,12 @@ class MarkdownParser:
             
             
     def isList(self,md,params={}):
+        """Checks if current line is list and parses it further
+
+        Args:
+            md (str): the partial markdown file
+            params (dict, optional): to pass the style params. Defaults to {}.
+        """
         regex = self.getRe('list',level= self.prev_level+1)
         match = regex.match(md)
         if match:
@@ -52,6 +73,13 @@ class MarkdownParser:
             self.isHeading(md,params)
 
     def isHeading(self,md,params):
+    
+        """Checks if current line is heading and parses it further
+
+        Args:
+            md (str): the partial markdown file
+            params (dict): to pass the style params.
+        """
         regex = self.getRe('heading')
         match = regex.match(md)
         if match:
@@ -64,6 +92,12 @@ class MarkdownParser:
             self.isLink(md,params)
         
     def isLink(self,md,params):
+        """Checks if current line is link and parses it further
+
+        Args:
+            md (str): the partial markdown file
+            params (dict): to pass the style params.
+        """
         regex = self.getRe('link')
         match = regex.match(md)
         if match:
@@ -74,6 +108,12 @@ class MarkdownParser:
         else:
             self.isStyle(md,params)
     def isStyle(self,md,params):
+        """Checks if current line is bold or italics and parses it further
+
+        Args:
+            md (str): the partial markdown file
+            params (dict): to pass the style params.
+        """
         for level,style in [[3,'bi'],[2,'b'],[1,'i']]:
             regex = self.getRe('bi',level = level)
             match = regex.match(md)
@@ -95,4 +135,10 @@ class MarkdownParser:
             self.isText(md,params)
         
     def isText(self,md,params):
+        """Checks if current line is text and parses it further
+
+        Args:
+            md (str): the partial markdown file
+            params (dict): to pass the style params.
+        """
         self.result.append(IDS(md,viewer=self.viewer,**params))

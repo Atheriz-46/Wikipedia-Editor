@@ -1,21 +1,21 @@
-"""
-IDS Structure:
-
-to support: bold, italics, list, H1-H3 
-
-"""
-
 
 from typing import List
 from tkinter import font
 import tkinter as tk
 from constants import heading_size
 class IDS:
-    
-    val: str
+    """Internal Data Structure to act as a Bridge between md file and Tkinter object
+    """
     
     def __init__(self, val:str,viewer, type_: str = 'leaf',children = [],**kwargs):
-        #TODO: add a way to inherit properties like bi and heading_size from the parent node
+        """Initialises the IDS
+
+        Args:
+            val (str): the text values associated with the node
+            viewer (Viewer): Viewer Object 
+            type_ (str, optional): type of Node [root,leaf,list]. Defaults to 'leaf'.
+            children (list, optional): List of children, only if type_='root'. Defaults to [].
+        """
         self.val = val
         self.child : List[IDS] = []
         if children: self.child+=children
@@ -24,9 +24,24 @@ class IDS:
         self.viewer = viewer
 
     def __str__(self):
+        """Converts to string
+
+        Returns:
+            string: Custom string representation of subtree rooted at self
+        """
         return f"type:{self.type_}, val:{self.val}, params:{str(self.params)}" + '\n('+''.join(str(child) for child in self.child)+')'
 
-    def getFrame(self,text=None,enum = -1):        
+    def getFrame(self,text=None,enum = -1):    
+        """Converts the subtree rooted at self to corresponding tk.Text object
+
+        Args:
+            text (tk.Text, optional): The tk.Text object to render the subtree. Defaults to None.
+            enum (int, optional): to maintain the tag attribute currospinding to the current node. Defaults to -1.
+
+        Returns:
+            (tk.text, optional): the final tk.text object 
+        """
+            
         if self.type_=='root':
             for idx,child in enumerate(self.child):
                 child.getFrame(text,idx)
@@ -57,5 +72,10 @@ class IDS:
             text.tag_configure(tag, **tag_config)
    
     def click(self,link):
+        """Callback function to handle links
+
+        Args:
+            link (str): The name of the destination article
+        """
         print(f"goto {link}")
         self.viewer.link(link)
