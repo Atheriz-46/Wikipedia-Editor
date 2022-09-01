@@ -15,7 +15,7 @@ class GUIManager(tk.Tk):
     # for backbutton in toolbar
     def newPage(self,articleName):
         self.fm.makeFile(articleName)
-        self.frameViewer.changeViewerArticle(articleName)
+        self.switchToViewer(articleName)
         self.switchToEditor()
 
     def back(self):

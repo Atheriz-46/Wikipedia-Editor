@@ -51,11 +51,7 @@ class Toolbar(tk.Frame):
 		self.btn_new_view.pack(side = tk.RIGHT)
 		self.ent_view.pack(side = tk.RIGHT)
 
-		self.lbl_dummy_home = tk.Label(master = self.frm_home, text = "Wikipedia Editor")
-		self.lbl_dummy_home.pack(fill = tk.X)
-
-		self.lbl_dummy_view = tk.Label(master = self.frm_view, text = "Wikipedia Editor")
-		self.lbl_dummy_view.pack(fill = tk.X)
+		self.columnconfigure(2, weight = 1)
 
 		self.frm_home.grid(row = 0, column = 2, sticky = "news")
 		self.frm_view.grid(row = 0, column = 2, sticky = "news")
@@ -65,11 +61,11 @@ class Toolbar(tk.Frame):
 
 		if (frm == self.frm_home):
 			self.manager.newPage(self.ent_home.get())
-			self.ent_home.delete()
+			self.ent_home.delete(0,tk.END)
 
 		elif(frm == self.frm_view):
 			self.manager.newPage(self.ent_view.get())
-			self.ent_view.delete()
+			self.ent_view.delete(0,tk.END)
 
 # window = tk.Tk()
 
