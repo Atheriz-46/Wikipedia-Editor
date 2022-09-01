@@ -66,6 +66,7 @@ class GUIManager(tk.Tk):
         else:
             self.sf.push(articleName)
         if articleName == "HomePage.md":
+            self.op.generate()
             self.tb.changeMode(0)
         else:
             self.tb.changeMode(1)
