@@ -14,22 +14,41 @@ class GUIManager(tk.Tk):
     
     # for backbutton in toolbar
     def newPage(self,articleName):
+        """
+        Serves toolbar when new page button is pressed in toolbar 
+
+        Args:
+            articleName (str): Name of the new article to be created 
+        """
+        
         self.fm.makeFile(articleName)
         self.switchToViewer(articleName)
         self.switchToEditor()
 
     def back(self):
+        """
+        Serves toolbar when back button is pressed in toolbar 
+        """
+
         self.switchToViewer("back")
 
     # for switching to editormode
     def switchToEditor(self):
-        
+        """
+        Internal fuction for switching to editor mode  
+        """
+
         self.tb.changeMode(2)
         self.frameEditor.changeEditorArticle(self.sf.currentTop())
         self.frameEditor.tkraise()
     
     # for switching to an article in viewermode
     def switchToViewer(self,articleName=None):
+        """
+        Internal fuction for switching to viewer mode showing a given article
+        Args:
+            articleName (str): Name of the new article to be shown in viewer
+        """
 
         if articleName == None:
             articleName = self.sf.currentTop()
@@ -46,7 +65,10 @@ class GUIManager(tk.Tk):
 
     # for switching to an article in viewermod
     def switchToHomePage(self):
-        
+        """
+        Internal fuction for switching to go back to Homepage 
+        """
+
         self.sf.push("HomePage.md")
         self.tb.changeMode(0)
         self.op.generate()
@@ -54,6 +76,11 @@ class GUIManager(tk.Tk):
         self.frameViewer.tkraise()
 
     def __init__(self,*args,**kwargs):
+        """
+        Initialization function of GUIManager
+        Args:
+            directory (str): Name of the directory where the wiki is
+        """
         tk.Tk.__init__(self)
         
         # initialize in Homemode 
