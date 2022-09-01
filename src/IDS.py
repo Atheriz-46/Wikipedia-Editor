@@ -35,6 +35,12 @@ class IDS:
         if self.type_=='list':
             tag = f'tag_{enum}'
             text.insert(tk.END,self.val,tag)
+            curr_font = font.Font(text,text.cget("font"))
+            font_config = {}
+            font_config['size'] = heading_size['h0']
+            curr_font.configure(**font_config)
+            tag_config = {'font':curr_font}
+            text.tag_configure(tag, **tag_config)
         else:
             
             tag = f'tag_{enum}'

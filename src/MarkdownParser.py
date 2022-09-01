@@ -35,7 +35,7 @@ class MarkdownParser:
         match = regex.match(md)
         if match:
             val, self.prev_level = match.group(2), len(match.group(1))
-            self.result.append(IDS(val = '   '*self.prev_level + '\u2022 ',viewer=self.viewer,type_ = 'list'))
+            self.result.append(IDS(val = '   '*self.prev_level + '\u2022 ',viewer=self.viewer,type_ = 'list',params=params))
             self.isHeading(val,params)
         else:
             self.prev_level = -1
