@@ -51,6 +51,12 @@ class Toolbar(tk.Frame):
 		self.btn_new_view.pack(side = tk.RIGHT)
 		self.ent_view.pack(side = tk.RIGHT)
 
+		self.lbl_dummy_home = tk.Label(master = self.frm_home, text = "Wikipedia Editor")
+		self.lbl_dummy_home.pack(fill = tk.X)
+
+		self.lbl_dummy_view = tk.Label(master = self.frm_view, text = "Wikipedia Editor")
+		self.lbl_dummy_view.pack(fill = tk.X)
+
 		self.frm_home.grid(row = 0, column = 2, sticky = "news")
 		self.frm_view.grid(row = 0, column = 2, sticky = "news")
 		self.frm_edit.grid(row = 0, column = 2, sticky = "news")
