@@ -2,6 +2,7 @@ class Surfer:
     """
     Used to maintain the pages that have been visited in a stack to facilitate the "back" button
     """
+
     stack = []
 
     def currentTop(self):
