@@ -1,15 +1,11 @@
-"""
-Module name : OpeningPage
-
-Used to create the opening page for the application that lists the files in the home directory
-
-"""
-
 from glob import glob
 from os.path import join
 
 
 class OpeningPage:
+    """
+    Used to create the opening page for the application that lists the files in the home directory
+    """
     def __init__(self, fileManager):
         """
         Used to initialise the Opening page and set the fileManager object that handles accessing files

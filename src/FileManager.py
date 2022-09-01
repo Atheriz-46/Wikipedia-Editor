@@ -1,14 +1,10 @@
-"""
-Module name : FileManager
-
-Used as a middleman between GUIManager and the file storage system. Sets the home directory, finds files to read from and write to, fetches content of specified files in the home directory.
-
-"""
-
 import os
 
 
 class FileManager:
+    """
+    Used as a middleman between GUIManager and the file storage system. Sets the home directory, finds files to read from and write to, fetches content of specified files in the home directory.
+    """
     def __init__(self, directory):
 
         """
