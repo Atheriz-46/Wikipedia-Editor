@@ -6,9 +6,26 @@
 Welcome to Wikipedia-Editor's documentation!
 ============================================
 
-.. automodule:: __init__
+.. automodule:: GUIManager
    :members:
-
+.. automodule:: Editor
+   :members:
+.. automodule:: AskDirectory
+   :members:  
+.. automodule:: FileManager
+   :members:    
+.. automodule:: IDS
+   :members: 
+.. automodule:: MarkdownParser
+   :members:  
+.. automodule:: OpeningPage
+   :members:
+.. automodule:: Surfer
+   :members:
+.. automodule:: Toolbar
+   :members:
+.. automodule:: Viewer
+   :members:
 .. toctree::
    :maxdepth: 2
    :caption: Contents:

@@ -1,11 +1,7 @@
-"""
-Module name : Surfer
-
-Used to maintain the pages that have been visited in a stack to facilitate the "back" button
-
-"""
-
 class Surfer:
+    """
+    Used to maintain the pages that have been visited in a stack to facilitate the "back" button
+    """
     stack = []
 
     def currentTop(self):
@@ -18,7 +14,7 @@ class Surfer:
             return "HomePage.md"
         else:
             return self.stack[-1]
-    
+
     def back(self):
         """
         Returns to the previously visited page. Pops the topmost page in the stack if any and returns the subsequent topmost page
@@ -27,8 +23,8 @@ class Surfer:
         if len(self.stack) > 0:
             self.stack.pop()
         return self.currentTop()
-    
-    def push(self,x):
+
+    def push(self, x):
         """
         Used to add a page to the stack. Called when a new page is opened.
 
@@ -37,4 +33,3 @@ class Surfer:
         """
 
         self.stack.append(x)
-
