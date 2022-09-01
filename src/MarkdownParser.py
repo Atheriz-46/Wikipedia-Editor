@@ -1,5 +1,5 @@
 import re
-import IDS
+from IDS import IDS
 
 class MarkdownParser:
     def __init__(self,viewer):
