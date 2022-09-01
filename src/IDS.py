@@ -20,7 +20,7 @@ class IDS:
         self.child: List[IDS] = []
         if children:
             self.child += children
-        self.type_ = type_  # ['root','list','non-list']
+        self.type_ = type_  # ['root','list','leaf']
         self.params = kwargs
         self.viewer = viewer
 

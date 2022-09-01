@@ -4,7 +4,7 @@ class Surfer:
     """
 
     stack = []
-    
+
     def clear(self):
         """
         Clears history of pages visited by the viewer

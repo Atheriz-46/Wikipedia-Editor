@@ -114,14 +114,3 @@ class Toolbar(tk.Frame):
         elif frm == self.frm_view:
             self.manager.newPage(self.ent_view.get())
             self.ent_view.delete(0, tk.END)
-
-
-# window = tk.Tk()
-
-# tb = Toolbar(window,window)
-
-# tb.pack()
-
-
-# mainApplication = GUIManager()
-# mainApplication.mainloop()
