@@ -6,6 +6,9 @@
 Welcome to Wikipedia-Editor's documentation!
 ============================================
 
+.. automodule:: __init__
+   :members:
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
