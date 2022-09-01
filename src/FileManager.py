@@ -10,9 +10,14 @@ class FileManager():
 	def __init__(self,directory): 
 		self.dir = directory
 		self.currentDirectory = directory	
+
 	def setDirectory(self, directory): 
 		self.dir = directory
 
+	def makeFile(self,articleName):
+		self.file = open(os.path.join(self.dir,articleName), 'w+')
+		self.file.close()
+	
 	def fetchDirectory(self):
 		return self.dir
 

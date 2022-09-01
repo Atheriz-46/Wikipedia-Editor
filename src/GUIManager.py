@@ -13,6 +13,11 @@ class GUIManager(tk.Tk):
     # 2 = currently Editing Wiki 
     
     # for backbutton in toolbar
+    def newPage(self,articleName):
+        self.fm.makeFile(articleName)
+        self.frameViewer.changeViewerArticle(articleName)
+        self.switchToEditor()
+
     def back(self):
         self.switchToViewer("back")
 
