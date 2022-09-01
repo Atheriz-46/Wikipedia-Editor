@@ -1,3 +1,10 @@
+"""
+Module name : Toolbar
+
+Used to create a Toolbar Frame object which contains widgets to navigate through the application,create new pages, edit and view existing pages
+
+"""
+
 import tkinter as tk
 from tkinter import ttk
 
