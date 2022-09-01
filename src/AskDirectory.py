@@ -1,6 +1,16 @@
 import tkinter as tk
 class AskDirectory(tk.Tk): 
+    """
+    Extends tkinter Window to create a prompt to ask for directory of wiki [DEPRECIATED]
+    Args:
+        articleName (str): String contains the directory of wiki to be passed back
+    """
+
     def handleSubmit(self):
+        """
+        Handles when submit button is pressed in UI 
+        """
+
         self.str.directory = self.entryForDirectory.get()
         self.destroy()
 
