@@ -7,80 +7,77 @@ Used as a middleman between GUIManager and the file storage system. Sets the hom
 
 import os
 
-class FileManager():
 
+class FileManager:
+    def __init__(self, directory):
 
+        """
+        Args:
+                directory (str) : Sets this as the home directory for the object of FileManager class
+        """
 
-	def __init__(self,directory): 
+        self.dir = directory
+        self.currentDirectory = directory
 
-		"""
-		Args:
-			directory (str) : Sets this as the home directory for the object of FileManager class
-		"""
+    def setDirectory(self, directory):
 
-		self.dir = directory
-		self.currentDirectory = directory	
+        """
+        Used to set the home directory
 
-	def setDirectory(self, directory): 
+        Args:
+                directory (str) : this is set as the home directory
+        """
 
-		"""
-		Used to set the home directory
+        self.dir = directory
 
-		Args:
-			directory (str) : this is set as the home directory
-		"""
+    def makeFile(self, articleName):
 
-		self.dir = directory
+        """
+        Used to create a new file with name articleName
 
-	def makeFile(self,articleName):
+        Args:
+                articleName (str) : the name of the file that has to be created
+        """
 
-		"""
-		Used to create a new file with name articleName
+        self.file = open(os.path.join(self.dir, articleName), "a+")
+        self.file.close()
 
-		Args:
-			articleName (str) : the name of the file that has to be created 
-		"""
+    def fetchDirectory(self):
 
-		self.file = open(os.path.join(self.dir,articleName), 'a+')
-		self.file.close()
-	
-	def fetchDirectory(self):
+        """
+        Used to get the home directory name / path
 
-		"""
-		Used to get the home directory name / path
+        """
 
-		"""
+        return self.dir
 
-		return self.dir
+    def fetchFrom(self, filename):
 
-	def fetchFrom(self, filename):
+        """
+        Used to get content from the specified file in the home directory
 
-		"""
-		Used to get content from the specified file in the home directory
+        Args:
+                filename (str) : The file that content has to be fetched from
+        """
 
-		Args:
-			filename (str) : The file that content has to be fetched from
-		"""
+        self.file = open(os.path.join(self.dir, filename), "r")
+        self.content = self.file.read()
 
-		self.file = open(os.path.join(self.dir, filename) , 'r')
-		self.content = self.file.read()
+        self.file.close()
 
-		self.file.close()
+        return self.content
 
-		return self.content
+    def saveTo(self, filename, content):
 
-	def saveTo(self, filename, content):
+        """
+        Used to save content to the specified file in the home directory
 
-		"""
-		Used to save content to the specified file in the home directory
+        Args:
+                filename (str) : The name of file in the home directory that content has to saved to
+                content (str) : The markdown text that has to be saved to the file
+        """
 
-		Args:
-			filename (str) : The name of file in the home directory that content has to saved to
-			content (str) : The markdown text that has to be saved to the file
-		"""
+        self.file = open(os.path.join(self.dir, filename), "w+")
+        self.file.write(content)
 
-		self.file = open(os.path.join(self.dir, filename), 'w+')
-		self.file.write(content)
-		
-		self.file.close()
-
+        self.file.close()
