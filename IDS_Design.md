@@ -1,6 +1,13 @@
 # Problems:
 - Nested lists ?
+# Heading **Bold** *italics*
 
+- heading
+  - text
+  - bold
+    - text
+  - italics
+    - text
 # Functions to be supported
 * bold
 * italics
@@ -27,7 +34,7 @@
     -  Extra continous hashs will result in all hashes to be parsed as hashes inplace of metacharacters.
     -  Links: 
        -  supports links in the heading
-       -  Does **Not** support heading inside link text.
+       -  Does **Not** support _heading_ inside link text.
    - supports heading inside bullet'
 - Links
   - supports to be inside lists, not list inside them.
@@ -37,7 +44,7 @@
 ## The IDS node class:
 This will be the basic building block of our IDS. The structure needs to be such that there is easy translation from md to ids and ids to the tkinter frame. Since only one direction of the transformation is required, this makes the choice of structure, linear or nested, for the IDS, important. Since we need to finally get a tkinter object, we choose the nested structure as that most closely resembles the tkinter flow.
 
-So we will define every node to have:
+***So we will define every node to have:lol***
 - type
 - value
 - children
@@ -66,9 +73,7 @@ we define the following types:
   - heading 
   - Link
   - bi
-    - bi
-      - bi  
-        - bi
+
 
 ### Types#2
 We will store the following in metadata:
