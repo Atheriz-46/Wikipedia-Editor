@@ -3,10 +3,20 @@ from IDS import IDS
 
 class MarkdownParser:
     def __init__(self,viewer):
+        """Initializes the MarkdownParser
+
+        Args:
+            viewer (Viewer): provides the corresponding viewer object
+        """
         self.viewer = viewer
         self.result = []
         self.prev_level = -1 
     def parse(self,md):
+        """Parses the given markdown string and sets the 
+
+        Args:
+            md (_type_): _description_
+        """
         self.__init__(self.viewer)
         for line in md.split('\n'):
             self.isList(line+'\n')
