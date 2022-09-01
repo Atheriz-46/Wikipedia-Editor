@@ -39,10 +39,10 @@ class Toolbar(tk.Frame):
 		self.btn_edit = ttk.Button(master = self.frm_view, text = "Edit", command = self.manager.switchToEditor)
 		self.btn_edit.pack(side = tk.LEFT)
 
-		self.ent_home = tk.Entry()
+		self.ent_home = tk.Entry(master = self.frm_home)
 		self.btn_new_home = ttk.Button(master = self.frm_home, text = "New Page", command = lambda: self.newPage(self.frm_home))
 
-		self.ent_view = tk.Entry()
+		self.ent_view = tk.Entry(master = self.frm_view)
 		self.btn_new_view = ttk.Button(master = self.frm_view, text = "New Page", command = lambda: self.newPage(self.frm_view))
 
 		self.btn_new_home.pack(side = tk.RIGHT)
