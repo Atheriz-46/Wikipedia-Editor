@@ -78,3 +78,14 @@ class FileManager:
         self.file.write(content)
 
         self.file.close()
+
+    def delete(self, filename):
+        """
+        Deletes the filename given to it in directory 
+
+        Args:
+                filename (str) : The name of file in the home directory which has to be removed
+        """
+        if os.path.isfile(os.path.join(self.dir, filename)):
+            os.remove(os.path.join(self.dir, filename))
+        

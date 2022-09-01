@@ -13,6 +13,14 @@ class GUIManager(tk.Tk):
     # 1 = currently Viewing Wiki
     # 2 = currently Editing Wiki
 
+    def deletePage(self):
+        """
+        Serves toolbar when delete button is pressed in toolbar
+        """
+        self.fm.delete(self.sf.currentTop())
+        self.sf.clear()
+        self.switchToHomePage()
+
     # for backbutton in toolbar
     def newPage(self, articleName):
         """
