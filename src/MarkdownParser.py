@@ -46,6 +46,8 @@ class MarkdownParser:
         match = regex.match(md)
         if match:
             val, depth = match.group(2), len(match.group(1))
+            if depth==1:
+                params["underline"] = 1
             self.isLink(val,{**params,'heading':f'h{depth}'})
                     
         else:
@@ -69,7 +71,7 @@ class MarkdownParser:
                 if match.group(4):
                     val = match.group(4)
                 elif match.group(7):
-                    val = match.group(2)
+                    val = match.group(7)
                 pre,post = match.group(1), match.group(9)
                 self.isText(pre,params)
                 style_config = {}
