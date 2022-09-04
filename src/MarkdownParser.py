@@ -140,7 +140,7 @@ class MarkdownParser:
                 elif match.group(7):
                     val = match.group(7)
                 pre, post = match.group(1), match.group(9)
-                self.isText(pre, params)
+                self.isStyle(pre, params)
                 style_config = {}
                 style_config["slant"] = "italic" if "i" in style else "roman"
                 style_config["weight"] = "bold" if "b" in style else "normal"
