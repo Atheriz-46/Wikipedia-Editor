@@ -1,0 +1,584 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Welcome to Wikipedia-Editor’s documentation! &#8212; Wikipedia-Editor 1.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-GUIManager">
+<span id="welcome-to-wikipedia-editor-s-documentation"></span><h1>Welcome to Wikipedia-Editor’s documentation!<a class="headerlink" href="#module-GUIManager" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="GUIManager.GUIManager">
+<em class="property">class </em><code class="descclassname">GUIManager.</code><code class="descname">GUIManager</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUIManager.html#GUIManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUIManager.GUIManager" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="GUIManager.GUIManager.back">
+<code class="descname">back</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUIManager.html#GUIManager.back"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUIManager.GUIManager.back" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serves toolbar when back button is pressed in toolbar</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUIManager.GUIManager.deletePage">
+<code class="descname">deletePage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUIManager.html#GUIManager.deletePage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUIManager.GUIManager.deletePage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serves toolbar when delete button is pressed in toolbar</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUIManager.GUIManager.newPage">
+<code class="descname">newPage</code><span class="sig-paren">(</span><em>articleName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUIManager.html#GUIManager.newPage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUIManager.GUIManager.newPage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serves toolbar when new page button is pressed in toolbar</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>articleName</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – Name of the new article to be created</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUIManager.GUIManager.switchToEditor">
+<code class="descname">switchToEditor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUIManager.html#GUIManager.switchToEditor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUIManager.GUIManager.switchToEditor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal fuction for switching to editor mode</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUIManager.GUIManager.switchToHomePage">
+<code class="descname">switchToHomePage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUIManager.html#GUIManager.switchToHomePage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUIManager.GUIManager.switchToHomePage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal fuction for switching to go back to Homepage</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUIManager.GUIManager.switchToViewer">
+<code class="descname">switchToViewer</code><span class="sig-paren">(</span><em>articleName=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/GUIManager.html#GUIManager.switchToViewer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#GUIManager.GUIManager.switchToViewer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal fuction for switching to viewer mode showing a given article
+:param articleName: Name of the new article to be shown in viewer
+:type articleName: str</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-Editor"></span><dl class="class">
+<dt id="Editor.Editor">
+<em class="property">class </em><code class="descclassname">Editor.</code><code class="descname">Editor</code><span class="sig-paren">(</span><em>parent</em>, <em>guimanager</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Editor.html#Editor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Editor.Editor" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="Editor.Editor.changeEditorArticle">
+<code class="descname">changeEditorArticle</code><span class="sig-paren">(</span><em>articleName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Editor.html#Editor.changeEditorArticle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Editor.Editor.changeEditorArticle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes active article to articleName</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>articleName</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – Name of the article to be edited</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Editor.Editor.render">
+<code class="descname">render</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Editor.html#Editor.render"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Editor.Editor.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Renders the Editor Frame</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-AskDirectory"></span><dl class="class">
+<dt id="AskDirectory.AskDirectory">
+<em class="property">class </em><code class="descclassname">AskDirectory.</code><code class="descname">AskDirectory</code><span class="sig-paren">(</span><em>txt</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/AskDirectory.html#AskDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AskDirectory.AskDirectory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extends tkinter Window to create a prompt to ask for directory of wiki [DEPRECIATED]
+:param articleName: String contains the directory of wiki to be passed back
+:type articleName: str</p>
+<dl class="method">
+<dt id="AskDirectory.AskDirectory.handleSubmit">
+<code class="descname">handleSubmit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/AskDirectory.html#AskDirectory.handleSubmit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#AskDirectory.AskDirectory.handleSubmit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles when submit button is pressed in UI</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-FileManager"></span><dl class="class">
+<dt id="FileManager.FileManager">
+<em class="property">class </em><code class="descclassname">FileManager.</code><code class="descname">FileManager</code><span class="sig-paren">(</span><em>directory</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/FileManager.html#FileManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#FileManager.FileManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used as a middleman between GUIManager and the file storage system. Sets the home directory, finds files to read from and write to, fetches content of specified files in the home directory.</p>
+<dl class="method">
+<dt id="FileManager.FileManager.delete">
+<code class="descname">delete</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/FileManager.html#FileManager.delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#FileManager.FileManager.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the filename given to it in directory</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The name of file in the home directory which has to be removed</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="FileManager.FileManager.fetchDirectory">
+<code class="descname">fetchDirectory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/FileManager.html#FileManager.fetchDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#FileManager.FileManager.fetchDirectory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to get the home directory name / path</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="FileManager.FileManager.fetchFrom">
+<code class="descname">fetchFrom</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/FileManager.html#FileManager.fetchFrom"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#FileManager.FileManager.fetchFrom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to get content from the specified file in the home directory</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The file that content has to be fetched from</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="FileManager.FileManager.makeFile">
+<code class="descname">makeFile</code><span class="sig-paren">(</span><em>articleName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/FileManager.html#FileManager.makeFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#FileManager.FileManager.makeFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to create a new file with name articleName</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>articleName</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the name of the file that has to be created</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="FileManager.FileManager.saveTo">
+<code class="descname">saveTo</code><span class="sig-paren">(</span><em>filename</em>, <em>content</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/FileManager.html#FileManager.saveTo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#FileManager.FileManager.saveTo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to save content to the specified file in the home directory</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The name of file in the home directory that content has to saved to</li>
+<li><strong>content</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The markdown text that has to be saved to the file</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="FileManager.FileManager.setDirectory">
+<code class="descname">setDirectory</code><span class="sig-paren">(</span><em>directory</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/FileManager.html#FileManager.setDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#FileManager.FileManager.setDirectory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to set the home directory</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>directory</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – this is set as the home directory</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-IDS"></span><dl class="class">
+<dt id="IDS.IDS">
+<em class="property">class </em><code class="descclassname">IDS.</code><code class="descname">IDS</code><span class="sig-paren">(</span><em>val: str</em>, <em>viewer</em>, <em>type_: str = 'leaf'</em>, <em>children=[]</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/IDS.html#IDS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#IDS.IDS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal Data Structure to act as a Bridge between md file and Tkinter object</p>
+<dl class="method">
+<dt id="IDS.IDS.click">
+<code class="descname">click</code><span class="sig-paren">(</span><em>link</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/IDS.html#IDS.click"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#IDS.IDS.click" title="Permalink to this definition">¶</a></dt>
+<dd><p>Callback function to handle links</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>link</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The name of the destination article</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="IDS.IDS.getFrame">
+<code class="descname">getFrame</code><span class="sig-paren">(</span><em>text=None</em>, <em>enum=-1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/IDS.html#IDS.getFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#IDS.IDS.getFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the subtree rooted at self to corresponding tk.Text object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>text</strong> (<em>tk.Text</em><em>, </em><em>optional</em>) – The tk.Text object to render the subtree. Defaults to None.</li>
+<li><strong>enum</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em>, </em><em>optional</em>) – to maintain the tag attribute currospinding to the current node. Defaults to -1.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">the final tk.text object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">(tk.text, optional)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-MarkdownParser"></span><dl class="class">
+<dt id="MarkdownParser.MarkdownParser">
+<em class="property">class </em><code class="descclassname">MarkdownParser.</code><code class="descname">MarkdownParser</code><span class="sig-paren">(</span><em>viewer</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MarkdownParser.html#MarkdownParser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#MarkdownParser.MarkdownParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parser for md to IDS.</p>
+<dl class="method">
+<dt id="MarkdownParser.MarkdownParser.getFrame">
+<code class="descname">getFrame</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MarkdownParser.html#MarkdownParser.getFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#MarkdownParser.MarkdownParser.getFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the rendered tk.Text object corresponding to the md parsed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>text</strong> (<em>tk.Text</em>) – tk.Text object to dump all the formatted text into</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Rendered tk.Text object, ready to be packed</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">tk.Text</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="MarkdownParser.MarkdownParser.getRe">
+<code class="descname">getRe</code><span class="sig-paren">(</span><em>type_</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MarkdownParser.html#MarkdownParser.getRe"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#MarkdownParser.MarkdownParser.getRe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the corresponding regex object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – denotes the regex type wanted</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">returns the regex pattern object</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">re.pattern</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="MarkdownParser.MarkdownParser.isHeading">
+<code class="descname">isHeading</code><span class="sig-paren">(</span><em>md</em>, <em>params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MarkdownParser.html#MarkdownParser.isHeading"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#MarkdownParser.MarkdownParser.isHeading" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if current line is heading and parses it further</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>md</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the partial markdown file</li>
+<li><strong>params</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><em>dict</em></a>) – to pass the style params.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="MarkdownParser.MarkdownParser.isLink">
+<code class="descname">isLink</code><span class="sig-paren">(</span><em>md</em>, <em>params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MarkdownParser.html#MarkdownParser.isLink"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#MarkdownParser.MarkdownParser.isLink" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if current line is link and parses it further</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>md</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the partial markdown file</li>
+<li><strong>params</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><em>dict</em></a>) – to pass the style params.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="MarkdownParser.MarkdownParser.isList">
+<code class="descname">isList</code><span class="sig-paren">(</span><em>md</em>, <em>params={}</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MarkdownParser.html#MarkdownParser.isList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#MarkdownParser.MarkdownParser.isList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if current line is list and parses it further</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>md</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the partial markdown file</li>
+<li><strong>params</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><em>dict</em></a><em>, </em><em>optional</em>) – to pass the style params. Defaults to {}.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="MarkdownParser.MarkdownParser.isStyle">
+<code class="descname">isStyle</code><span class="sig-paren">(</span><em>md</em>, <em>params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MarkdownParser.html#MarkdownParser.isStyle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#MarkdownParser.MarkdownParser.isStyle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if current line is bold or italics and parses it further</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>md</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the partial markdown file</li>
+<li><strong>params</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><em>dict</em></a>) – to pass the style params.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="MarkdownParser.MarkdownParser.isText">
+<code class="descname">isText</code><span class="sig-paren">(</span><em>md</em>, <em>params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MarkdownParser.html#MarkdownParser.isText"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#MarkdownParser.MarkdownParser.isText" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if current line is text and parses it further</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>md</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the partial markdown file</li>
+<li><strong>params</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><em>dict</em></a>) – to pass the style params.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="MarkdownParser.MarkdownParser.parse">
+<code class="descname">parse</code><span class="sig-paren">(</span><em>md</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MarkdownParser.html#MarkdownParser.parse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#MarkdownParser.MarkdownParser.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses the given markdown string and sets the</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>md</strong> (<em>_type_</em>) – _description_</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-OpeningPage"></span><dl class="class">
+<dt id="OpeningPage.OpeningPage">
+<em class="property">class </em><code class="descclassname">OpeningPage.</code><code class="descname">OpeningPage</code><span class="sig-paren">(</span><em>fileManager</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/OpeningPage.html#OpeningPage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#OpeningPage.OpeningPage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to create the opening page for the application that lists the files in the home directory</p>
+<dl class="method">
+<dt id="OpeningPage.OpeningPage.generate">
+<code class="descname">generate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/OpeningPage.html#OpeningPage.generate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#OpeningPage.OpeningPage.generate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to update the opening page with the list of files in the home directory</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-Surfer"></span><dl class="class">
+<dt id="Surfer.Surfer">
+<em class="property">class </em><code class="descclassname">Surfer.</code><code class="descname">Surfer</code><a class="reference internal" href="_modules/Surfer.html#Surfer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Surfer.Surfer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to maintain the pages that have been visited in a stack to facilitate the “back” button</p>
+<dl class="method">
+<dt id="Surfer.Surfer.back">
+<code class="descname">back</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Surfer.html#Surfer.back"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Surfer.Surfer.back" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns to the previously visited page. Pops the topmost page in the stack if any and returns the subsequent topmost page</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Surfer.Surfer.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Surfer.html#Surfer.clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Surfer.Surfer.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clears history of pages visited by the viewer</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Surfer.Surfer.currentTop">
+<code class="descname">currentTop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Surfer.html#Surfer.currentTop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Surfer.Surfer.currentTop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to find the last visited page (topmost page in the stack). Returns the home page if the stack is empty</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Surfer.Surfer.push">
+<code class="descname">push</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Surfer.html#Surfer.push"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Surfer.Surfer.push" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to add a page to the stack. Called when a new page is opened.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>x</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – Refers to the filename / page that has been visited and is to be pushed to the stack</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-Toolbar"></span><dl class="class">
+<dt id="Toolbar.Toolbar">
+<em class="property">class </em><code class="descclassname">Toolbar.</code><code class="descname">Toolbar</code><span class="sig-paren">(</span><em>parent</em>, <em>guimanager</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Toolbar.html#Toolbar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Toolbar.Toolbar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to create a Toolbar Frame object which contains widgets to navigate through the application,create new pages, edit and view existing pages</p>
+<dl class="method">
+<dt id="Toolbar.Toolbar.changeMode">
+<code class="descname">changeMode</code><span class="sig-paren">(</span><em>newMode</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Toolbar.html#Toolbar.changeMode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Toolbar.Toolbar.changeMode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to change the widgets displayed on Toolbar depending on mode. Called by GUIManager</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>newMode</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – Specifies the mode to be switched to - {0 : Home mode, 1 : View mode, 2 : Edit mode}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Toolbar.Toolbar.newPage">
+<code class="descname">newPage</code><span class="sig-paren">(</span><em>frm</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Toolbar.html#Toolbar.newPage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Toolbar.Toolbar.newPage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to create a new Page. Called when “New Page” button is clicked. Fetches new page name from entry widget and call newPage() from GUIManager</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>frm</strong> (<em>tk.Frame</em>) – Specifies the mode in which the “New Page” button has been clicked {frm_home : Home mode, frm_view : View mode}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-Viewer"></span><dl class="class">
+<dt id="Viewer.Viewer">
+<em class="property">class </em><code class="descclassname">Viewer.</code><code class="descname">Viewer</code><span class="sig-paren">(</span><em>parent</em>, <em>guimanager</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Viewer.html#Viewer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Viewer.Viewer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Viewer Frame which shows markdown files extends tk.Frame</p>
+<dl class="method">
+<dt id="Viewer.Viewer.changeViewerArticle">
+<code class="descname">changeViewerArticle</code><span class="sig-paren">(</span><em>articleName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Viewer.html#Viewer.changeViewerArticle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Viewer.Viewer.changeViewerArticle" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Changes the article currently shown in the Viewer Frame</dt>
+<dd><dl class="first last docutils">
+<dt>Args:</dt>
+<dd>articleName (str) : Name of the new article to be shown</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="Viewer.Viewer.link">
+<code class="descname">link</code><span class="sig-paren">(</span><em>link</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Viewer.html#Viewer.link"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#Viewer.Viewer.link" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Handles when links are clicked in Viewer frame</dt>
+<dd><dl class="first last docutils">
+<dt>Args:</dt>
+<dd>link (str) : Link attached to Hyperlink clicked in Viewer Frame</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">Wikipedia-Editor</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Aditya Mohan Mishra, Harsh Wardhan, Pushpit Srivastava.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
